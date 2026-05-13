@@ -1,0 +1,6 @@
+using $gpc-app-builder  create this app
+app title: ASS DE GESTION DE LA BASE DE L
+app idea: An operations-focused app offering asset management, container tracking, reservation management, and interview scheduling to streamline daily business tasks.
+company name: ASS DE GESTION DE LA BASE DE LOISIRS
+email address: [email to be provided later]
+the two icon and featured graphics contained in docs folder

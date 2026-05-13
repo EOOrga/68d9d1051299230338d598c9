@@ -1,0 +1,31 @@
+Privacy Policy for ASS DE GESTION DE LA BASE DE L
+
+Effective date: May 12, 2026
+
+ASS DE GESTION DE LA BASE DE L is provided by ASS DE GESTION DE LA BASE DE LOISIRS. This policy explains how the Android app handles information.
+
+Information handled by the app
+The app lets you save local asset records, container tracking entries, reservation notes, interview schedules, and display preferences. This information is stored on your device using local app storage.
+
+No account or cloud sync
+ASS DE GESTION DE LA BASE DE L does not require account registration. It does not upload operation records to a server, provide cloud sync, or sell personal information.
+
+Data collection
+The app does not collect analytics, advertising identifiers, precise location, contacts, photos, microphone input, payment information, or health data.
+
+Data sharing
+The app does not share your operation records or preferences with ASS DE GESTION DE LA BASE DE LOISIRS or third parties.
+
+Data retention and deletion
+Your records remain on your device until you delete the app data or uninstall the app. Removing the app from your device removes locally stored app records according to Android system behavior.
+
+Children
+The app is a general productivity tool and is not directed to children under 13.
+
+Security
+Because operation records are stored locally, protect your device with the security features available on Android.
+
+Contact
+For privacy questions or support, contact:
+ASS DE GESTION DE LA BASE DE LOISIRS
+contact@assgestionbase.app

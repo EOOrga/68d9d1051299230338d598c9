@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#013A63">
+  <meta name="description" content="ASS DE GESTION DE LA BASE DE L organise les actifs, conteneurs, réservations et entretiens en local.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.png">
+  <title>ASS DE GESTION DE LA BASE DE L</title>
+  <style>
+    :root {
+      --ink: #082033;
+      --muted: #516574;
+      --primary: #013A63;
+      --primary-dark: #011E36;
+      --accent: #0EA5C6;
+      --green: #3E8F5E;
+      --amber: #E9A23B;
+      --surface: #F5F8FB;
+      --line: #D7E5EC;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--surface);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px clamp(18px, 4vw, 56px);
+      color: var(--white);
+      background: rgba(1, 30, 54, 0.82);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 76vh;
+      display: grid;
+      align-items: end;
+      padding: 120px clamp(20px, 6vw, 72px) 58px;
+      color: var(--white);
+      background-image: url("featured.png");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(1, 24, 44, 0.66);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 780px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(38px, 8vw, 82px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 20px 0 28px;
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      background: var(--accent);
+      color: var(--primary-dark);
+    }
+
+    .button.secondary {
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    main section {
+      padding: 56px clamp(18px, 5vw, 72px);
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      max-width: 720px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      min-height: 210px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .feature .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--primary);
+      font-weight: 900;
+    }
+
+    .feature:nth-child(2) .icon {
+      background: var(--accent);
+      color: var(--primary-dark);
+    }
+
+    .feature:nth-child(3) .icon {
+      background: var(--green);
+    }
+
+    .feature:nth-child(4) .icon {
+      background: var(--amber);
+      color: var(--primary-dark);
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .feature p,
+    .split p,
+    .contact p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .panel {
+      border-left: 5px solid var(--accent);
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checks li {
+      padding-left: 28px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .contact {
+      background: var(--primary-dark);
+      color: var(--white);
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer {
+      padding: 22px clamp(18px, 5vw, 72px);
+      color: var(--muted);
+      background: var(--white);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        display: none;
+      }
+
+      .grid,
+      .split,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 72vh;
+        padding-bottom: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="ASS DE GESTION DE LA BASE DE L">
+      <img src="favicon.png" alt="">
+      <span>ASS Base Gestion</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#workflow">Flux</a>
+      <a href="#local">Local</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-content">
+      <h1>ASS DE GESTION DE LA BASE DE L</h1>
+      <p>Une application Android opérationnelle pour suivre actifs, conteneurs, réservations et entretiens dans un espace unique, local et concentré sur le terrain.</p>
+      <div class="cta-row">
+        <a class="button" href="#workflow">Voir les flux</a>
+        <a class="button secondary" href="mailto:contact@assgestionbase.app">Contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="workflow">
+      <div class="section-inner">
+        <p class="section-kicker">Organisation quotidienne</p>
+        <h2>Quatre flux pour garder la base lisible.</h2>
+        <div class="grid">
+          <article class="feature">
+            <div class="icon">A</div>
+            <h3>Actifs</h3>
+            <p>Centralisez les équipements, lieux, responsables et échéances de maintenance.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">C</div>
+            <h3>Conteneurs</h3>
+            <p>Suivez l emplacement, le contenu et les vérifications des zones de stockage.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">R</div>
+            <h3>Réservations</h3>
+            <p>Préparez les espaces, les demandes et les créneaux à confirmer avec l accueil.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">E</div>
+            <h3>Entretiens</h3>
+            <p>Planifiez les rencontres et gardez les notes utiles pour la direction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="local">
+      <div class="section-inner split">
+        <div>
+          <p class="section-kicker">Application Android</p>
+          <h2>Conçue pour une consultation rapide sur téléphone.</h2>
+          <p>Le tableau de bord résume les priorités. Le registre filtre les dossiers par type. Le planning rassemble les prochaines actions sans créer de compte ni se connecter à un service externe.</p>
+        </div>
+        <div class="panel">
+          <strong>Traitement local</strong>
+          <ul class="checks">
+            <li>Dossiers sauvegardés uniquement dans le stockage de l application.</li>
+            <li>Aucune synchronisation cloud, API distante ou collecte analytique.</li>
+            <li>Réglages simples pour adapter la densité de lecture sur mobile.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner contact-grid">
+        <div>
+          <p class="section-kicker">ASS DE GESTION DE LA BASE DE LOISIRS</p>
+          <h2>Support et informations.</h2>
+          <p>Pour les questions de confidentialité ou de support, utilisez l adresse de contact de l application.</p>
+        </div>
+        <a class="button" href="mailto:contact@assgestionbase.app">contact@assgestionbase.app</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ASS DE GESTION DE LA BASE DE L. Application locale sans compte utilisateur ni accès API.
+  </footer>
+</body>
+</html>

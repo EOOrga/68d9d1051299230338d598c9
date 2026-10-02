@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "applications": {
+    "com.taziggg100.ass_gestion_base": {
+      "title": "ASS DE GESTION DE LA BASE DE L",
+      "short_description": "Track assets, containers, reservations, and interviews locally.",
+      "full_description": "ASS DE GESTION DE LA BASE DE L helps operations teams keep a clear local register for daily business tasks across a leisure base or service site.\n\nCreate asset records, follow container status, prepare reservations, and schedule interviews from a focused Android workflow. The dashboard highlights active work, the register keeps every item searchable by type, and the planning view groups upcoming actions for the team.\n\nAll records stay on the device. The app does not require an account, cloud sync, analytics, advertising identifiers, or external service access.",
+      "source_screenshots": [
+        "docs/screens/1.png",
+        "docs/screens/2.png",
+        "docs/screens/3.png"
+      ],
+      "generated_from": "existing repository listing metadata and README",
+      "generated_at": "2026-10-02T21:28:16.412181+00:00"
+    }
+  }
+}

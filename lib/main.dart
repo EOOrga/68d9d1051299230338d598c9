@@ -400,7 +400,7 @@ List<WorkRecord> screenshotRecords() {
     WorkRecord(
       id: 'shot-asset-1',
       type: WorkType.asset,
-      title: 'Pompe technique bassin nord',
+      title: 'ASS DE GESTION DE LA BASE DE L',
       reference: 'ACT-2048',
       location: 'Zone loisirs - Local maintenance',
       owner: 'Nadia B.',

@@ -1,0 +1,5 @@
+ASS DE GESTION DE LA BASE DE L helps operations teams keep a clear local register for daily business tasks across a leisure base or service site.
+
+Create asset records, follow container status, prepare reservations, and schedule interviews from a focused Android workflow. The dashboard highlights active work, the register keeps every item searchable by type, and the planning view groups upcoming actions for the team.
+
+All records stay on the device. The app does not require an account, cloud sync, analytics, advertising identifiers, or external service access.
